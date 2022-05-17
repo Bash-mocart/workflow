@@ -3,6 +3,9 @@ name: deploy
 on:
   workflow_call:
     inputs:
+      environment:
+        required: true
+        type: string
       env_dir:
         required: true
         type: string
@@ -53,16 +56,11 @@ on:
       TYPEORM_DATABASE:
         required: true
 
-
-
-        
-
-
-
 jobs:
   deploy:
     name: 'deploy-staging'
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environments }}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
