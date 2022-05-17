@@ -236,7 +236,7 @@ jobs:
             --set migrations.containerImage=${{ env.DOCKER_REPOSITORY }}/${{ env.MIGRATIONS_IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
             --set migrations.container.TYPEORM_MIGRATIONS_DIR=${{ secrets.TYPEORM_MIGRATIONS_DIR_P }} \
             --set migrations.container.TYPEORM_MIGRATIONS=${{ secrets.TYPEORM_MIGRATIONS_P }} \
-            --set migrations.container.TYPEORM_MIGRATIONS_ENTITIES=${{ secrets.TYPEORM_MIGRATIONS_ENTITIES_P }} \
+            --set migrations.container.TYPEORM_ENTITIES=${{ secrets.TYPEORM_MIGRATIONS_ENTITIES_P }} \
             --debug
           
 
