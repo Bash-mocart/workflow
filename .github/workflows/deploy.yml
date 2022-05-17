@@ -232,11 +232,11 @@ jobs:
             --set backend.container.TYPEORM_PORT=${{ secrets.TYPEORM_PORT }} \
             --set backend.container.TYPEORM_PASSWORD=${{ secrets.TYPEORM_PASSWORD }} \
             --set backend.container.TYPEORM_USERNAME=${{ secrets.TYPEORM_USERNAME }} \
-            --set backend.container.TYPEORM_DATABASE=${{ secrets.TYPEORM_DATABASE }} 
-            --set migrations.containerImage=${{ env.DOCKER_REPOSITORY }}/${{ env.MIGRATIONS_IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-            --set migrations.container.TYPEORM_MIGRATIONS_DIR=${{ secrets.TYPEORM_MIGRATIONS_DIR_P }}
-            --set migrations.container.TYPEORM_MIGRATIONS=${{ secrets.TYPEORM_MIGRATIONS_P }}
-            --set migrations.container.TYPEORM_MIGRATIONS_ENTITIES=${{ secrets.TYPEORM_MIGRATIONS_ENTITIES_P }}
+            --set backend.container.TYPEORM_DATABASE=${{ secrets.TYPEORM_DATABASE }} \
+            --set migrations.containerImage=${{ env.DOCKER_REPOSITORY }}/${{ env.MIGRATIONS_IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
+            --set migrations.container.TYPEORM_MIGRATIONS_DIR=${{ secrets.TYPEORM_MIGRATIONS_DIR_P }} \
+            --set migrations.container.TYPEORM_MIGRATIONS=${{ secrets.TYPEORM_MIGRATIONS_P }} \
+            --set migrations.container.TYPEORM_MIGRATIONS_ENTITIES=${{ secrets.TYPEORM_MIGRATIONS_ENTITIES_P }} 
           
 
     - name: Run Kube-Bench to check cluster config
