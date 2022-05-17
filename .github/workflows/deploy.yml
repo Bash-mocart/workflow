@@ -168,12 +168,15 @@ jobs:
         kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master"
         helm upgrade -i aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=${{ env.CLUSTER_NAME }} --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
 
+    - name: Creating namespace prometheus, grafana
+      continue-on-error: true
+      run: |
+          kubectl create namespace prometheus
+          kubectl create namespace grafana
     
     - name: Installing prometheus, grafana
       run: | 
           kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-          kubectl create namespace prometheus
-          kubectl create namespace grafana
           helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
           helm upgrade -i prometheus prometheus-community/prometheus \
             --namespace prometheus \
