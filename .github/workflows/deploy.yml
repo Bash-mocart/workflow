@@ -8,16 +8,22 @@ on:
         type: string
       helm_dir:
         required: true
+        type: string
       IMAGE_TAG:
         required: true
+        type: string
       CLUSTER_NAME:
         required: true
+        type: string
       DOCKER_REPOSITORY:
         required: true
+        type: string
       FRONTEND_IMAGE_NAME:
         required: true
+        type: string
       BACKEND_IMAGE_NAME:
         required: true
+        type: string
       
     secrets:
       AWS_ACCESS_KEY_ID:
@@ -32,6 +38,21 @@ on:
         required: true
       GRAFANA_PASS:
         required: true
+      TYPEORM_CONNECTION:
+        required: true
+      TYPEORM_MIGRATIONS_DIR:
+        required: true
+      TYPEORM_MIGRATIONS:
+        required: true
+      TYPEORM_PORT:
+        required: true
+      TYPEORM_PASSWORD:
+        required: true
+      TYPEORM_USERNAME:
+        required: true
+      TYPEORM_DATABASE:
+        required: true
+
 
 
         
