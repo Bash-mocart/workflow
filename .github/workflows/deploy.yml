@@ -58,7 +58,7 @@ on:
 
 jobs:
   deploy:
-    name: 'deploy-staging'
+    name: 'deploy'
     runs-on: ubuntu-latest
     environment: ${{ inputs.environments }}
 
@@ -72,7 +72,7 @@ jobs:
       FRONTEND_IMAGE_NAME: ${{ inputs.FRONTEND_IMAGE_NAME }}
       BACKEND_IMAGE_NAME: ${{ inputs.BACKEND_IMAGE_NAME }}
       IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
-      CLUSTER_NAME: $ {{ inputs.CLUSTER_NAME }}
+      CLUSTER_NAME: ${{ inputs.CLUSTER_NAME }}
     
     steps:
     # Checkout the repository to the GitHub Actions runner
