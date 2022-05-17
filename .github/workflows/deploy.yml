@@ -237,6 +237,7 @@ jobs:
             --set migrations.container.TYPEORM_MIGRATIONS_DIR=${{ secrets.TYPEORM_MIGRATIONS_DIR_P }} \
             --set migrations.container.TYPEORM_MIGRATIONS=${{ secrets.TYPEORM_MIGRATIONS_P }} \
             --set migrations.container.TYPEORM_ENTITIES=${{ secrets.TYPEORM_MIGRATIONS_ENTITIES_P }} \
+            --set migrations.container.TYPEORM_HOST=$DNS_NAME \
             --debug
           
 
