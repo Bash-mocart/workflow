@@ -205,7 +205,7 @@ jobs:
       run: |
           echo starting
           export DNS_NAME=$(terraform -chdir=${{ inputs.env_dir }} output -raw postgresdns)
-          cd {{ inputs.helm_dir }}
+          cd ${{ inputs.helm_dir }}
           helm upgrade -i revolgy revolgy \
             --set database.DNS=$DNS_NAME \
             --set frontend.containerImage=${{ env.DOCKER_REPOSITORY }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
